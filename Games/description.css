@@ -1,0 +1,270 @@
+/* =========================================
+   1. IMPORT THEME VARIABLES
+   ========================================= */
+@import url('../themes.css');
+
+/* =========================================
+   2. BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. BANNER (Matches Menu)
+   ========================================= */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--bg-card);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.filter-btn {
+    text-decoration: none;
+    font-family: var(--font-header);
+    font-size: 0.75rem;
+    border: 1px solid #444;
+    color: var(--text-main);
+    padding: 10px 24px;
+    border-radius: var(--radius);
+    transition: 0.2s ease;
+    text-transform: uppercase;
+}
+
+.filter-btn:hover {
+    background: var(--primary-accent);
+    color: #000;
+    border-color: var(--primary-accent);
+}
+
+/* =========================================
+   4. LAYOUT CONTAINER (Split View)
+   ========================================= */
+.description-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    gap: 60px;
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.details-column {
+    flex: 1.2; /* Left side slightly wider */
+    min-width: 350px;
+}
+
+.media-column {
+    flex: 1;
+    min-width: 350px;
+    position: sticky;
+    top: 100px; /* Video stays visible while scrolling long lists */
+}
+
+/* =========================================
+   5. LEFT SIDE: TITLE & DOWNLOADS
+   ========================================= */
+.game-title {
+    font-family: var(--font-header);
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font sizing */
+    margin-bottom: 40px;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.download-box {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 30px;
+    border: 1px solid #333;
+}
+
+.box-label {
+    font-family: var(--font-header);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* THE SCROLLING LIST */
+.scroll-list {
+    max-height: 350px; /* Limits the height */
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar for Neon Look */
+.scroll-list::-webkit-scrollbar {
+    width: 6px;
+}
+.scroll-list::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+.scroll-list::-webkit-scrollbar-thumb {
+    background: var(--primary-accent);
+    border-radius: 10px;
+}
+
+.dl-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: #252525;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.dl-item:hover {
+    background: #2a2a2a;
+    border-color: var(--primary-accent);
+    transform: translateX(10px);
+}
+
+/* =========================================
+   6. RIGHT SIDE: MEDIA & PLAY BUTTON
+   ========================================= */
+.video-frame {
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: var(--glow-centered);
+    margin-bottom: 30px;
+}
+
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Ensures the entire video is visible within the frame */
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    /* 'contain' ensures the whole video fits without cropping */
+    object-fit: contain; 
+    /* We add a black background in case the video aspect ratio 
+       doesn't perfectly match the 16:9 container */
+    background-color: #000; 
+    display: block;
+}
+
+.play-btn {
+    display: block;
+    width: 100%;
+    padding: 25px;
+    background: var(--primary-accent);
+    color: #000;
+    text-align: center;
+    font-family: var(--font-header);
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: translateY(-5px);
+    background: #ffffff; /* Slightly brighter on hover */
+    box-shadow: var(--glow-centered);
+}
+
+/* =========================================
+   7. RESPONSIVE TWEAKS
+   ========================================= */
+@media (max-width: 850px) {
+    .description-container {
+        flex-direction: column;
+    }
+    .media-column {
+        position: static;
+        width: 100%;
+    }
+    .details-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    /* Centers the 'Back to Menu' button */
+    .filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .description-container {
+        flex-direction: column;
+        padding: 20px 5%;
+        align-items: center; /* Centers the columns */
+    }
+
+    .details-column, .media-column {
+        width: 100%;
+        text-align: center; /* Centers title and text */
+    }
+
+    .game-title {
+        font-size: 2rem;
+    }
+
+    .scroll-list {
+        max-height: 250px;
+        text-align: left; /* Keep the text inside the download list left-aligned for readability */
+    }
+
+    .play-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
