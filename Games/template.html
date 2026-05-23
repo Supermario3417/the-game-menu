@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="shortcut icon" href="../Images/3417.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="description.css">
+</head>
+<body>
+<div class="copyright-bar">
+    &copy; 2026 by 3417. All Rights Reserved. Game copyrights remain within the game itself.
+</div>
+
+<header class="banner">
+    <div class="logo">
+        <img src="../Images/3417-logo.png" alt="3417 Logo" class="logo-img">
+        <span>Games by 3417</span>
+    </div>
+    <nav class="filters">
+        <button id="open-modal-btn" class="filter-btn">Credits & Info</button>
+        <a href="../index.html" class="filter-btn">Back to Menu</a>
+    </nav>
+</header>
+
+<main class="description-container">
+    <section class="details-column">
+        <h1 class="game-title">Template Game</h1>
+        
+        <div class="download-box">
+            <p class="box-label">Downloads and Extras</p>
+            <div class="scroll-list">
+                <a href="downloads/template-win.zip" class="dl-item">Windows Build - Legacy</a>
+                <a href="downloads/template-mac.zip" class="dl-item">MacOS Build - Legacy</a>
+                <a href="downloads/template-linux.zip" class="dl-item">Linux Build - Legacy</a>
+                <a href="#" target="_blank" class="dl-item">Original Soundtrack (OST)</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="media-column">
+        <div class="video-frame">
+            <video controls autoplay muted loop poster="Images/trailer-placeholder.jpg">
+                <source src="trailers/something.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <a href="https://play-link-here.com" target="_blank" class="play-btn">Play Game Now</a>
+    </section>
+</main>
+
+<div id="info-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+        
+        <h2 class="modal-title">Game Info & Credits</h2>
+        
+        <div class="modal-body-scroll">
+            <h3>Description</h3>
+            <p>Enter Description Here</p>
+            
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><strong>Lead Developer: </strong>3417</li>
+                <li><strong>Artist: </strong><a href="#" target="_blank" class="external-profile-link">E</a></li>
+                <li><strong>Composer: </strong>E</li>
+                <li><strong>Special Thanks: </strong>E</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="description.js"></script>
+</body>
+</html>

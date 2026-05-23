@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3417 Games</title>
+    <link rel="shortcut icon" href="Images/3417.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<div class="copyright-bar">
+    &copy; 2026 by 3417. All Rights Reserved. Game copyrights remain within the game itself.
+</div>
+
+<header class="banner">
+    <div class="logo">
+        <img src="../Images/3417-logo.png" alt="3417 Logo" class="logo-img">
+        <span>Games by 3417</span>
+    </div>
+    <nav class="filters">
+        <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+        <button class="filter-btn" onclick="filterSelection('sports')">Sports</button>
+        <button class="filter-btn" onclick="filterSelection('action')">Action</button>
+    </nav>
+</header>
+
+<main class="game-grid">
+    <a href="Games/pong-masters.html" class="game-card sports">
+        <img src="Images/Pong Masters.png" alt="Game Title" class="static-img">
+        <img src="Images/Previews/Pong Masters Preview.gif" alt="Gameplay Preview" class="hover-gif">
+        <div class="game-info"><h3>Pong Masters</h3></div>
+    </a>
+
+    <a href="Games/tic-tac-toe.html" class="game-card sports">
+        <img src="Images/Tic Tac Toe.png" alt="Game Title" class="static-img">
+        <img src="Images/Previews/Tic Tac Toe Preview.gif" alt="Gameplay Preview" class="hover-gif">
+        <div class="game-info"><h3>Tic Tac Toe</h3></div>
+    </a>
+
+    <a href="#" class="game-card">
+        <img src="Images/Question Mark.png" alt="Game Title">
+        <div class="game-info"><h3>Coming Soon</h3></div>
+    </a>
+
+</main>
+
+<script src="menu.js"></script>
+</body>
+</html>
