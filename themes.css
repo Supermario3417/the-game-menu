@@ -48,3 +48,19 @@
     top: 0; 
     z-index: 100;
 }
+
+/* =========================================
+   3. BANNER LOGO ALIGNMENT
+   ========================================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adds space between the image and the text */
+}
+
+.logo-img {
+    width: 100px;       /* Set the width of your logo */
+    height: 100px;      /* Set the height of your logo */
+    object-fit: contain; /* Prevents the image from stretching */
+    border-radius: 4px;  /* Optional: slightly rounds corners of the logo if needed */
+}
