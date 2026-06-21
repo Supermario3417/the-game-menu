@@ -64,3 +64,15 @@
     object-fit: contain; /* Prevents the image from stretching */
     border-radius: 4px;  /* Optional: slightly rounds corners of the logo if needed */
 }
+
+html::-webkit-scrollbar {
+    width: 6px;
+}
+html::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--primary-accent);
+    border-radius: 10px;
+}
