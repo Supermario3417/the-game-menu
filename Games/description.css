@@ -434,3 +434,63 @@ button.filter-btn {
 .device-opt-btn:hover {
     color: #000; 
 }
+
+/* =========================================
+   10. MOBILE-OPTIMIZED DEVICE MODAL
+   ========================================= */
+
+/* Target the content wrapper specifically for the device selector */
+.device-modal-content {
+    max-width: 500px; /* Slightly narrower than info modal for better aesthetic proportions */
+    width: 92%;       /* Prevents touching the screen edge on small devices */
+    padding: 40px 24px 30px 24px; /* Generous breathing room */
+}
+
+.device-title {
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 1.6rem); /* Dynamically shrinks on mobile */
+    margin-bottom: 25px;
+}
+
+.device-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Optimized gap for mobile tap targets */
+    width: 100%;
+}
+
+/* Base modifications for the device options buttons */
+.device-opt-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60px; /* Enforces minimum standard touch target size */
+    padding: 16px 20px;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem); /* Ensures text doesn't overflow container on tiny phones */
+    line-height: 1.2;
+    white-space: normal; /* Allows text to wrap nicely if the screen is super narrow */
+    word-break: break-word;
+}
+
+/* Mobile responsive override logic */
+@media (max-width: 480px) {
+    .device-modal-content {
+        padding: 35px 20px 20px 20px;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 15px;
+        font-size: 1.8rem; /* Slighly smaller X to keep layout tight */
+    }
+
+    .device-title {
+        margin-bottom: 20px;
+    }
+
+    .device-opt-btn {
+        padding: 14px 15px;
+        letter-spacing: 1px; /* Reduces letter spacing slightly so text fits cleanly */
+    }
+}

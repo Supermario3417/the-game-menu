@@ -76,3 +76,13 @@ html::-webkit-scrollbar-thumb {
     background: var(--primary-accent);
     border-radius: 10px;
 }
+
+/* -------------- */
+
+a:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
