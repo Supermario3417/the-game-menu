@@ -1,0 +1,207 @@
+/* =========================================
+   1. IMPORT THEME VARIABLES
+   ========================================= */
+@import url('themes.css');
+
+/* =========================================
+   2. BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+}
+
+/* =========================================
+   3. COPYRIGHT & BANNER
+   ========================================= */
+.copyright-bar {
+    background-color: #000;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-family: var(--font-header);
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #222;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--bg-card);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   4. FILTER BUTTONS
+   ========================================= */
+.filter-btn {
+    font-family: var(--font-header);
+    font-size: 0.75rem;
+    background: transparent;
+    border: 1px solid #444;
+    color: var(--text-main);
+    padding: 10px 24px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-accent);
+    color: #000;
+    border-color: var(--primary-accent);
+}
+
+/* =========================================
+   5. THE SQUARE GRID
+   ========================================= */
+.game-grid {
+    display: grid;
+    /* Responsive grid: items won't get smaller than 240px */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--gap);
+    padding: 40px 5%;
+}
+
+.game-card {
+    position: relative;
+    background: #000; /* Black base for image swapping */
+    text-decoration: none;
+    color: var(--text-main);
+    aspect-ratio: 1 / 1; 
+    display: block; 
+    border-radius: var(--radius);
+    overflow: hidden; 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--glow-centered);
+    z-index: 10;
+}
+
+/* GIF Hover Swap Logic */
+.game-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hover-gif {
+    opacity: 0;
+    z-index: 1;
+}
+
+.static-img {
+    opacity: 1;
+    z-index: 2;
+}
+
+.game-card:hover .static-img {
+    opacity: 0;
+}
+
+.game-card:hover .hover-gif {
+    opacity: 1;
+}
+
+/* =========================================
+   6. GAME OVERLAY INFO
+   ========================================= */
+.game-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, var(--gradient-bottom));
+    padding: 30px 10px 15px;
+    text-align: center;
+    z-index: 3; /* Ensure text stays above images */
+    pointer-events: none; /* Let clicks pass through to the link */
+}
+
+.game-info h3 {
+    font-family: var(--font-header);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+   ========================================= */
+
+/* Tablet & Smaller */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Phones (Vertical Stack & Centering) */
+@media (max-width: 480px) {
+    .copyright-bar {
+        font-size: 0.55rem;
+        padding: 8px 5px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr; /* Single column stack */
+        padding: 20px 10%;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .filter-btn {
+        width: 80%; 
+        margin: 5px auto;
+    }
+}
