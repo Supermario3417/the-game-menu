@@ -86,3 +86,38 @@ a:hover {
 button:hover {
     cursor: pointer;
 }
+
+/* -------------- */
+
+.copyright-bar {
+    background-color: #000;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    font-family: var(--font-header);
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #222;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--bg-card);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
