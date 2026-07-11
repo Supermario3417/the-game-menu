@@ -98,11 +98,16 @@ body {
     border-radius: var(--radius);
     overflow: hidden; 
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    /* Add accessible accent outline using theme variable */
+    border: 2px solid var(--primary-accent);
+    /* Keep images inside rounded border */
+    box-shadow: 0 0 0 0 transparent;
 }
 
 .game-card:hover {
     transform: scale(1.05);
-    box-shadow: var(--glow-centered);
+    /* Combine the existing centered glow with a larger, softer accent ring */
+    box-shadow: var(--glow-centered), 0 0 0 12px rgba(255, 255, 0, 0.18);
     z-index: 10;
 }
 
