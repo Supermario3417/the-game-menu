@@ -163,6 +163,37 @@ body {
 }
 
 /* =========================================
+   6B. UPDATED GLOW LABEL
+   ========================================= */
+.update-label {
+    position: absolute;
+    top: 12px; /* moved down so it's fully inside the card */
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: var(--font-header);
+    font-size: 1rem; /* increased size */
+    text-transform: uppercase;
+    color: var(--primary-accent);
+    pointer-events: none;
+    z-index: 5;
+
+    /* Strong glow */
+    text-shadow:
+        0 0 8px var(--primary-accent),
+        0 0 16px var(--primary-accent),
+        0 0 24px var(--primary-accent);
+
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Fade out on hover */
+.game-card:hover .update-label {
+    opacity: 0;
+}
+
+/* =========================================
    7. MOBILE RESPONSIVENESS
    ========================================= */
 

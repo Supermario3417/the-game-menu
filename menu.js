@@ -17,15 +17,10 @@ function filterSelection(category) {
 
     // 2. Show or hide cards
     for (let card of cards) {
-        if (category === "all") {
+        if (category === "all" || card.classList.contains(category)) {
             card.style.display = "block";
         } else {
-            // Only show if the card has the matching class
-            if (card.classList.contains(category)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+            card.style.display = "none";
         }
     }
 }
