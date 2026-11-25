@@ -170,6 +170,10 @@ body {
     top: 12px; /* moved down so it's fully inside the card */
     left: 50%;
     transform: translateX(-50%);
+    width: 230px;
+    height: auto;
+    padding: 8px;
+    display: flex;
 
     font-family: var(--font-header);
     font-size: 1rem; /* increased size */
@@ -186,6 +190,12 @@ body {
 
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #3f3f3fbb;
+    border-radius: 10px;
+    border: 2px solid var(--primary-accent);
 }
 
 /* Fade out on hover */
